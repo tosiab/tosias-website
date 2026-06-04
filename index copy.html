@@ -355,7 +355,7 @@
     /* ============================================================
        ABOUT PAGE
        ============================================================ */
-    .about-hero {
+    /*.about-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
@@ -379,7 +379,7 @@
     }
 
     /* Person illustration (CSS) */
-    .about-photo-figure {
+    /*.about-photo-figure {
       position: absolute;
       bottom: 0; left: 50%;
       transform: translateX(-50%);
@@ -471,7 +471,7 @@
     /* ============================================================
        CONTACT PAGE
        ============================================================ */
-    .contact-layout {
+    /*.contact-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
@@ -657,15 +657,14 @@
 <nav>
   <span class="nav-logo" onclick="showPage('home')">Magdalena Bednarz</span><!-- EDIT: your name -->
   <ul class="nav-links">
-    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
-    <li><a onclick="showPage('about')" id="nav-about">About Me</a></li>
-    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <!--li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+
   </ul>
   <div class="nav-social">
-    <!-- EDIT: replace # with your actual profile URLs -->
-    <a href="#" target="_blank">Instagram</a> 
-    <a href="#" target="_blank">LinkedIn</a>
-    <a href="#" target="_blank">X / Twitter</a>
+  EDIT: replace # with your actual profile URLs -->
+    <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.instagram.com/tosia.bednarz/&ved=2ahUKEwjY59LAyOyUAxWMjIkEHW9vGk0QFnoECBoQAQ&usg=AOvVaw1wGDg8jnGgV7Is46cPDmXM" target="_blank">Instagram</a> 
+    <a href="https://www.linkedin.com/in/tosia-bednarz-765783399" target="_blank">LinkedIn</a>
+    <a href="mailto:mtabednarz@gmail.com" target="_blank">Email Me</a>
   </div>
 </nav>
 
@@ -764,19 +763,19 @@
 <!-- ============================================================
      ABOUT PAGE
      ============================================================ -->
-<div class="page" id="page-about">
+<!--div class="page" id="page-about">
 
-  <!-- HERO -->
-  <section class="about-hero">
+  < HERO -->
+  <!--section class="about-hero">
     <div class="about-photo">
-      <!-- Replace this SVG with an <img> tag pointing to your own photo:
+     Replace this SVG with an <img> tag pointing to your own photo:
            <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;" alt="Your Name"> -->
-      <svg viewBox="0 0 200 250" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160px;" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="100" cy="90" rx="45" ry="52" fill="#f5c9a0"/>
-        <rect x="55" y="135" width="90" height="100" rx="8" fill="#3a3a3a"/>
-        <ellipse cx="100" cy="65" rx="48" ry="35" fill="#2a2a2a"/>
-        <path d="M60 90 Q55 120 65 130" stroke="#f5c9a0" fill="none" stroke-width="8" stroke-linecap="round"/>
-        <path d="M140 90 Q145 120 135 130" stroke="#f5c9a0" fill="none" stroke-width="8" stroke-linecap="round"/>
+    <!--svg viewBox="0 0 200 250" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160px;" xmlns="http://www.w3.org/2000/svg">
+        ellipse cx="100" cy="90" rx="45" ry="52" fill="#f5c9a0"/>
+        rect x="55" y="135" width="90" height="100" rx="8" fill="#3a3a3a"/>
+        ellipse cx="100" cy="65" rx="48" ry="35" fill="#2a2a2a"/>
+        path d="M60 90 Q55 120 65 130" stroke="#f5c9a0" fill="none" stroke-width="8" stroke-linecap="round"/>
+        path d="M140 90 Q145 120 135 130" stroke="#f5c9a0" fill="none" stroke-width="8" stroke-linecap="round"/>
         <ellipse cx="87" cy="97" rx="5" ry="6" fill="#2a2a2a"/>
         <ellipse cx="113" cy="97" rx="5" ry="6" fill="#2a2a2a"/>
         <path d="M90 115 Q100 122 110 115" stroke="#c0706a" fill="none" stroke-width="2" stroke-linecap="round"/>
@@ -785,51 +784,49 @@
     <div class="about-intro">
       <h1>About me</h1>
       <p>
-        <!-- EDIT: A little paragraph introduction that gives a sense of who you are, 
+   EDIT: A little paragraph introduction that gives a sense of who you are, 
              where you're from, and why you created this website. 
              This is the most likely part of the page to be read in full. -->
-        A little paragraph introduction that gives a sense of what you do, who you are,
+        <!--A little paragraph introduction that gives a sense of what you do, who you are,
         where you're from, and why you created this website. This is the most likely
         part of the page to be read in full.
       </p>
       <p>
-        <!-- EDIT: Add a second paragraph if you'd like -->
-        Feel free to add another paragraph here to expand on your story, your background,
+      EDIT: Add a second paragraph if you'd like -->
+        <!--Feel free to add another paragraph here to expand on your story, your background,
         or anything else that's important for visitors to know about you.
       </p>
       <a class="btn" onclick="showPage('contact')" style="margin-top:8px;">Get in touch →</a>
     </div>
-  </section>
-
-  <!-- INTERESTS & HOBBIES -->
-  <section class="section">
+  </section> INTERESTS & HOBBIES -->
+<!--section class="section">
     <p class="section-label">Beyond work</p>
     <h2 class="section-title">Interests &amp; Hobbies</h2>
     <p style="color:var(--color-muted);font-size:15px;margin-bottom:32px;max-width:600px;">
-      <!-- EDIT: your interests blurb -->
-      A little section to round out the professional purpose of this page. Who's the person behind it, really?
+    EDIT: your interests blurb -->
+      <!--A little section to round out the professional purpose of this page. Who's the person behind it, really?
       What do they like — and what are they like?
     </p>
 
     <div class="hobbies-grid">
-      <!-- EDIT: change emoji, name, and description for each hobby. Add or remove cards. -->
-      <div class="hobby-card">
+       EDIT: change emoji, name, and description for each hobby. Add or remove cards. -->
+      <!--div class="hobby-card">
         <div class="hobby-emoji">📷</div>
-        <div class="hobby-name">Photography</div><!-- EDIT -->
-        <div class="hobby-desc">Something short about what this means to you and why you love it.</div><!-- EDIT -->
-      </div>
+        <div class="hobby-name">Photography</diEDIT -->
+        <!--div class="hobby-desc">Something short about what this means to you and why you love it.</div><!-- EDIT -->
+      <!--/div>
       <div class="hobby-card">
         <div class="hobby-emoji">🌿</div>
-        <div class="hobby-name">Plants &amp; gardening</div><!-- EDIT -->
-        <div class="hobby-desc">Another hobby, interest, or thing that makes you tick as a person.</div><!-- EDIT -->
-      </div>
+        <div class="hobby-name">Plants &amp; gardening</div> EDIT -->
+        <!--iv class="hobby-desc">Another hobby, interest, or thing that makes you tick as a person.</div><!-- EDIT -->
+      <!--/div>
       <div class="hobby-card">
         <div class="hobby-emoji">📚</div>
-        <div class="hobby-name">Reading</div><!-- EDIT -->
-        <div class="hobby-desc">What kind of books? Fiction, non-fiction, sci-fi? Share a tiny bit.</div><!-- EDIT -->
-      </div>
-      <!-- ADD MORE: copy a .hobby-card block above -->
-    </div>
+        <div class="hobby-name">Reading</divEDIT -->
+        <!--iv class="hobby-desc">What kind of books? Fiction, non-fiction, sci-fi? Share a tiny bit.</div><!-- EDIT -->
+      <!--/div>
+    D MORE: copy a .hobby-card block above -->
+    <!--/div>
   </section>
 
   <!-- WORK HISTORY / TIMELINE -->
@@ -867,105 +864,6 @@
 </div><!-- /page-about -->
 
 
-<!-- ============================================================
-     CONTACT PAGE
-     ============================================================ -->
-<div class="page" id="page-contact">
-
-  <div class="contact-layout">
-
-    <!-- LEFT: contact info -->
-    <div class="contact-info">
-      <h1>Let's talk.</h1><!-- EDIT -->
-      <p>
-        <!-- EDIT: a sentence or two about what kinds of messages you welcome -->
-        Whether you have a question, a project idea, or just want to say hello — 
-        I'd love to hear from you. Fill out the form or reach me directly through 
-        any of the links below.
-      </p>
-
-      <div class="contact-links">
-        <!-- EDIT: replace placeholder text and href values with your own -->
-
-        <div class="contact-link">
-          <div class="contact-link-icon">✉️</div>
-          <div>
-            <div class="contact-link-label">Email</div>
-            <div class="contact-link-value">hello@yourname.com</div><!-- EDIT -->
-          </div>
-        </div>
-
-        <a class="contact-link" href="#" target="_blank"><!-- EDIT href -->
-          <div class="contact-link-icon">💼</div>
-          <div>
-            <div class="contact-link-label">LinkedIn</div>
-            <div class="contact-link-value">linkedin.com/in/yourname</div><!-- EDIT -->
-          </div>
-        </a>
-
-        <a class="contact-link" href="#" target="_blank"><!-- EDIT href -->
-          <div class="contact-link-icon">🐦</div>
-          <div>
-            <div class="contact-link-label">X / Twitter</div>
-            <div class="contact-link-value">@yourhandle</div><!-- EDIT -->
-          </div>
-        </a>
-
-        <a class="contact-link" href="#" target="_blank"><!-- EDIT href -->
-          <div class="contact-link-icon">📷</div>
-          <div>
-            <div class="contact-link-label">Instagram</div>
-            <div class="contact-link-value">@yourhandle</div><!-- EDIT -->
-          </div>
-        </a>
-
-        <!-- ADD MORE: copy a .contact-link above -->
-      </div>
-    </div>
-
-    <!-- RIGHT: contact form -->
-    <div class="contact-form-area">
-      <h2>Send me a message</h2>
-
-      <!--
-        HOW TO MAKE THIS FORM SEND REAL EMAILS:
-        1. Sign up for free at https://formspree.io
-        2. Create a new form and get your form endpoint URL
-        3. Change the action attribute below to your Formspree URL
-           e.g. action="https://formspree.io/f/xyzabcde"
-        4. Remove the onsubmit attribute (or keep it to show the success message)
-      -->
-      <form id="contact-form" action="#" method="POST" onsubmit="handleFormSubmit(event)">
-        <div class="form-group">
-          <label for="name">Your name</label>
-          <input type="text" id="name" name="name" placeholder="Jane Smith" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="jane@example.com" required>
-        </div>
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="What's this about?">
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell me what's on your mind…" required></textarea>
-        </div>
-        <button type="submit" class="btn">Send message →</button>
-        <div class="form-success" id="form-success">
-          ✓ Thanks! Your message has been sent. I'll get back to you soon.
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <footer>
-    <span class="footer-name">Your Name</span><!-- EDIT -->
-    <span class="footer-note">© 2025 · Built with love</span><!-- EDIT -->
-  </footer>
-
-</div><!-- /page-contact -->
 
 
 <!-- ============================================================
