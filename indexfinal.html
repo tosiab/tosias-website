@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+    PAGE TITLE — change "Magdalena Bednarz" to whatever you prefer
+  ============================================================ -->
+  <title>Magdalena Bednarz</title>
+
+  <!-- Google Fonts — Playfair Display for headings, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* ============================================================
+        COLOUR PALETTE — tweak these hex values to change the whole
+        site colour scheme in one place.
+      ============================================================ */
+      --cream:        #F0EDE6;
+      --dark:         #1e1e1e;
+      --muted:        #6b6b6b;
+      --accent-green: #7aaa4a;   /* the italic "really"-style accent */
+      --card-bg:      #ffffff;
+      --card-border:  #e0ddd6;
+      --grad-start:   #a8c9a0;
+      --grad-mid:     #c8dfa8;
+      --grad-end:     #dde8a0;
+      --circle:       rgba(255,255,255,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ──────────────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    /* ============================================================
+      NAV NAME — change "Magdalena Bednarz" below and in the HTML
+    ============================================================ */
+    .nav-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.875rem;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--dark); }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+
+    .hero-text {
+      padding: 72px 64px 72px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 28px;
+      color: var(--dark);
+    }
+
+    /* ============================================================
+      ACCENT WORD — the italic green word in the headline.
+      Change "really" in the HTML <em> tag to any word you like.
+    ============================================================ */
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.75;
+    }
+
+    /* ── HERO IMAGE PANEL ─────────────────────────────────── */
+    .hero-visual {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-mid) 50%, var(--grad-end) 100%);
+    }
+
+    /* ============================================================
+      HERO PHOTO — replace the src attribute below with the path
+      to your own photo. E.g. src="my-photo.jpg"
+      If the image is in the same folder as this HTML file, just
+      use the filename. The image fills the right panel.
+
+      OPTION A – keep the gradient + floating circle (default):
+        Leave the <img> tag commented out and the .hero-circle visible.
+
+      OPTION B – show your photo:
+        1. Uncomment the <img> block in the HTML (search "HERO PHOTO IMG").
+        2. Add your image file next to this HTML file.
+        3. Update the src="YOUR-PHOTO-HERE.jpg" attribute.
+    ============================================================ */
+    .hero-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--circle);
+      backdrop-filter: blur(4px);
+    }
+
+    /* Shown when a real photo is used instead of the placeholder circle */
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* ── SECTION WRAPPER ──────────────────────────────────── */
+    .section {
+      padding: 80px 64px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 900;
+      margin-bottom: 40px;
+      color: var(--dark);
+    }
+
+    /* ── AWARDS GRID ──────────────────────────────────────── */
+    /*
+      HOW TO ADD MORE AWARD CARDS:
+      Copy one <div class="award-card"> … </div> block in the HTML
+      and paste it inside <div class="awards-grid">.
+      There's no limit — the grid wraps automatically.
+    */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .award-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .award-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+      transform: translateY(-2px);
+    }
+
+    .award-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .award-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--dark);
+    }
+
+    .award-date {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .award-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── PLACEHOLDER CARD ─────────────────────────────────── */
+    .award-card.placeholder {
+      border-style: dashed;
+      background: transparent;
+      opacity: 0.5;
+    }
+
+    /* ── DIVIDER ──────────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--card-border);
+      margin: 0 64px;
+    }
+
+    /* ── CAREER INTERESTS ─────────────────────────────────── */
+    /*
+      HOW TO EDIT CAREER INTERESTS:
+      Each interest is a <div class="interest-pill"> tag.
+      Change the text inside, add new ones, or delete any.
+    */
+    .interests-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .interests-blurb {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .interests-blurb strong {
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .interest-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-content: flex-start;
+    }
+
+    .interest-pill {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      color: var(--dark);
+      letter-spacing: 0.01em;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .interest-pill:hover {
+      background: var(--accent-green);
+      color: #fff;
+      border-color: var(--accent-green);
+    }
+
+    /* ── LEADERSHIP ───────────────────────────────────────── */
+    /*
+      HOW TO ADD LEADERSHIP POSITIONS:
+      Copy one <div class="leadership-item"> … </div> block
+      and paste it inside <div class="leadership-list">.
+    */
+    .leadership-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .leadership-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .leadership-item:last-child { border-bottom: none; }
+
+    .leadership-index {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--card-border);
+      padding-top: 2px;
+    }
+
+    .leadership-body {}
+
+    .leadership-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+
+    .leadership-org {
+      font-size: 0.82rem;
+      color: var(--accent-green);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .leadership-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 28px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--dark); }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { gap: 16px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 280px; }
+      .hero-text { padding: 48px 24px; }
+      .section { padding: 56px 24px; }
+      .divider { margin: 0 24px; }
+      .interests-layout { grid-template-columns: 1fr; gap: 24px; }
+      footer { flex-direction: column; gap: 16px; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+    NAVIGATION BAR
+    • Change "Magdalena Bednarz" to your preferred display name.
+    • Update the href values for Instagram and LinkedIn to your
+      actual profile URLs. E.g. href="https://instagram.com/yourhandle"
+    • Change the mailto address in the Email Me link.
+  ============================================================ -->
+  <nav>
+    <span class="nav-name">Magdalena Bednarz</span>
+    <ul class="nav-links">
+      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="mailto:you@email.com">Email Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+    HERO SECTION
+  ============================================================ -->
+  <section class="hero">
+
+    <!-- Left: text -->
+    <div class="hero-text">
+      <p class="eyebrow">Welcome to my corner of the internet</p>
+
+      <!-- ============================================================
+        HERO HEADLINE
+        Change "Something" and "really" and "cool" to your own tagline.
+        Keep the <em> tags around whichever word you want in green italic.
+      ============================================================ -->
+      <h1 class="hero-headline">
+        Something <em>really</em><br>cool
+      </h1>
+
+      <!-- ============================================================
+        BIO TEXT — replace this paragraph with your own introduction.
+      ============================================================ -->
+      <p class="hero-bio">
+        Welcome to my website! My name is Magdalena Bednarz, but I prefer to
+        go by Tosia. I'm a student passionate about computer science, STEM
+        advocacy, and building community. All of my information can be found
+        here — thanks for stopping by!
+      </p>
+    </div>
+
+    <!-- Right: photo / gradient panel -->
+    <div class="hero-visual">
+
+      <!-- ============================================================
+        HERO PHOTO — OPTION A (default): gradient + blurred circle.
+        No changes needed; just looks nice as a placeholder.
+
+        OPTION B: use your own photo.
+        1. Place your photo file in the same folder as this HTML file.
+        2. Delete the line: <div class="hero-circle"></div>
+        3. Remove the <!-- and --> comment markers around the <img> below.
+        4. Replace YOUR-PHOTO-HERE.jpg with your actual filename.
+      ============================================================ -->
+      <div class="hero-circle"></div>
+
+      <!-- HERO PHOTO IMG — uncomment block below to use a real photo:
+      <img
+        class="hero-photo"
+        src="YOUR-PHOTO-HERE.jpg"
+        alt="Photo of Tosia"
+      />
+      -->
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ============================================================
+    EVENTS & ACCOLADES SECTION
+  ============================================================ -->
+  <section class="section">
+    <p class="section-eyebrow">Recognition</p>
+    <h2 class="section-title">Events &amp; Accolades</h2>
+
+    <!-- ============================================================
+      AWARD CARDS
+      Each card has:
+        • award-icon   — an emoji or symbol (optional, delete the line if unwanted)
+        • award-title  — the name of the award or event
+        • award-date   — date or time period
+        • award-desc   — a short description (optional)
+
+      TO ADD A NEW CARD: copy one block below and paste it before the
+      closing </div> of .awards-grid, then update the text.
+
+      TO REMOVE A CARD: delete the entire <div class="award-card"> block.
+    ============================================================ -->
+    <div class="awards-grid">
+
+      <div class="award-card">
+        <span class="award-icon">🏆</span>
+        <div class="award-title">TZHS First Women in STEM Night</div>
+        <div class="award-date">March 25th, 2026</div>
+        <div class="award-desc">
+          <!-- Change this description to describe the event or your role. -->
+          Organized and led the inaugural Women in STEM Night at TZHS, bringing
+          together students and professionals for an evening of networking and inspiration.
+        </div>
+      </div>
+
+      <div class="award-card">
+        <span class="award-icon">💻</span>
+        <div class="award-title">Computer Science Honor Society — Code Con!</div>
+        <div class="award-date">Spring 2026</div>
+        <div class="award-desc">
+          <!-- Change this description. -->
+          Co-hosted Code Con, a student-run coding competition celebrating
+          innovation in computer science at the high school level.
+        </div>
+      </div>
+
+      <!-- ============================================================
+        PLACEHOLDER CARD — delete this entire block once you've filled
+        in your real awards and no longer need a reminder slot.
+      ============================================================ -->
+      <div class="award-card placeholder">
+        <span class="award-icon">＋</span>
+        <div class="award-title">Your Next Award Here</div>
+        <div class="award-date">Month Year</div>
+        <div class="award-desc">Copy this card and fill in your details.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ============================================================
+    CAREER INTERESTS SECTION
+  ============================================================ -->
+  <section class="section">
+    <p class="section-eyebrow">Looking Ahead</p>
+    <h2 class="section-title">Career Interests</h2>
+
+    <div class="interests-layout">
+
+      <!-- Left: short narrative paragraph -->
+      <div class="interests-blurb">
+        <!-- ============================================================
+          CAREER INTERESTS PARAGRAPH
+          Replace this text with your own career goals and interests.
+          You can use <strong> tags around key phrases to highlight them.
+        ============================================================ -->
+        <p>
+          I'm drawn to the intersection of <strong>technology and people</strong>
+          — building systems that are not only functional but genuinely
+          meaningful. My interests span <strong>software engineering</strong>,
+          <strong>product design</strong>, and <strong>STEM education</strong>,
+          with a longer-term goal of creating equitable access to tech careers
+          for underrepresented students.
+        </p>
+        <br />
+        <p>
+          Outside the classroom I enjoy <strong>hackathons</strong>, mentoring
+          younger students, and exploring how computing intersects with fields
+          like biology and environmental science.
+        </p>
+      </div>
+
+      <!-- Right: interest pills -->
+      <!-- ============================================================
+        INTEREST PILLS
+        Add, remove, or rename any pill by editing the text inside
+        each <div class="interest-pill"> tag.
+      ============================================================ -->
+      <div class="interest-pills">
+        <div class="interest-pill">Software Engineering</div>
+        <div class="interest-pill">Product Design</div>
+        <div class="interest-pill">STEM Education</div>
+        <div class="interest-pill">Machine Learning</div>
+        <div class="interest-pill">Biotech</div>
+        <div class="interest-pill">Environmental Tech</div>
+        <div class="interest-pill">Entrepreneurship</div>
+        <div class="interest-pill">UX Research</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ============================================================
+    LEADERSHIP SECTION
+  ============================================================ -->
+  <section class="section">
+    <p class="section-eyebrow">Involvement</p>
+    <h2 class="section-title">Leadership &amp; Clubs</h2>
+
+    <!-- ============================================================
+      LEADERSHIP ITEMS
+      Each item has:
+        • leadership-role  — your title (e.g. "President")
+        • leadership-org   — the club or organisation name
+        • leadership-desc  — a short description of your responsibilities
+
+      TO ADD A NEW ITEM: copy one <div class="leadership-item"> block
+      and paste it before the closing </div> of .leadership-list.
+      The numbered index updates automatically via CSS counter if you
+      change the numbers manually — just keep them sequential.
+
+      TO REMOVE AN ITEM: delete the entire <div class="leadership-item"> block.
+    ============================================================ -->
+    <div class="leadership-list">
+
+      <div class="leadership-item">
+        <span class="leadership-index">01</span>
+        <div class="leadership-body">
+          <div class="leadership-role">President</div>
+          <!-- Change club/org name: -->
+          <div class="leadership-org">Computer Science Honor Society</div>
+          <!-- Change description: -->
+          <div class="leadership-desc">
+            Lead weekly meetings, coordinate guest speakers, and organise
+            events like Code Con to foster a community of student developers.
+          </div>
+        </div>
+      </div>
+
+      <div class="leadership-item">
+        <span class="leadership-index">02</span>
+        <div class="leadership-body">
+          <div class="leadership-role">Founder &amp; President</div>
+          <div class="leadership-org">Women in STEM Club</div>
+          <div class="leadership-desc">
+            Founded the club to create a supportive space for young women
+            in STEM, organising panels, workshops, and networking nights.
+          </div>
+        </div>
+      </div>
+
+      <div class="leadership-item">
+        <span class="leadership-index">03</span>
+        <div class="leadership-body">
+          <!-- Change role, org, and description below: -->
+          <div class="leadership-role">Your Role Here</div>
+          <div class="leadership-org">Club or Organisation Name</div>
+          <div class="leadership-desc">
+            Brief description of your responsibilities and what you've
+            contributed to this organisation.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+    FOOTER
+    Update the social links and email address below to match
+    the ones in the nav bar above.
+  ============================================================ -->
+  <footer>
+    <span class="footer-name">© 2026 Magdalena Bednarz</span>
+    <ul class="footer-links">
+      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+      <li><a href="mailto:you@email.com">Email Me</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
